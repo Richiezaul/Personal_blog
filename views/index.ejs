@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog Personal</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>Mi Blog Personal</h1>
+
+  <form action="/comment" method="POST">
+    <input name="comment" placeholder="Escribe tu comentario" required>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <ul>
+    <% comments.forEach((comment, index) => { %>
+      <li>
+        <%= comment.text %> - Likes: <%= comment.likes %>
+        <form action="/like/<%= index %>" method="POST" style="display:inline">
+          <button type="submit">👍</button>
+        </form>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>
