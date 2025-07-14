@@ -1,1 +1,17 @@
-{ "rewrites": [{ "source": "/(.*)", "destination": "/" }] }
+{
+  "routes" : [
+    {
+      "src": "/",
+      "dest": "/"
+    },
+    {
+      "src": "/comment",
+      "dest": "/"
+    },
+    {
+      "src": "/like/:index",
+      "dest": "/"
+    }
+    
+  ]
+}
